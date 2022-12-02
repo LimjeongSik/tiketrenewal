@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="css/reset.css" />
+        <link rel="stylesheet" href="css/common.css" />
+        <link rel="stylesheet" href="css/myticket.css" />
+        <title>내 티켓</title>
+    </head>
+    <body>
+        <div class="mobile__wrap">
+            <header class="header__area">
+                <div class="flex btn__prev">
+                    <img src="images/btns/btn_prev.png" alt="뒤로가기" />
+                </div>
+                <div class="header__title">내 티켓</div>
+            </header>
+            <ul class="tab__category flex">
+                <li style="--bc: #fa7c09">
+                    <div class="flex">
+                        <img
+                            src="images/icons/ic_f.png"
+                            alt="F&B"
+                            style="--w: 18px; --h: 18px"
+                        />
+                        <h6>F&B</h6>
+                    </div>
+                </li>
+                <li style="--bc: #f4c828">
+                    <div class="flex">
+                        <img
+                            src="images/icons/ic_g.png"
+                            alt="Goods"
+                            style="--w: 18px; --h: 18px"
+                        />
+                        <h6>Goods</h6>
+                    </div>
+                </li>
+                <li style="--bc: #32c3cf">
+                    <div class="flex">
+                        <img
+                            src="images/icons/ic_t.png"
+                            alt="Ticket"
+                            style="--w: 18px; --h: 14px"
+                        />
+                        <h6>Ticket</h6>
+                    </div>
+                </li>
+            </ul>
+            <section class="ticket__wrap">
+                <div class="flex section__title">
+                    <h2>Ticket</h2>
+                    <span>34</span>
+                </div>
+                <div class="ticket__list">
+                    <div class="ticket">
+                        <div class="ticket__info">
+                            <img src="images/icons/ic_gray_logo.png" alt="" />
+                            <div class="flex-direction">
+                                <span>22.09.25</span>
+                                <h6>Premium GA</h6>
+                            </div>
+                        </div>
+                        <div class="ticket__con">
+                            <span class="con__l">STAFF (1일권)</span>
+                            <span class="con__r">STAFF (1일권)</span>
+                        </div>
+                    </div>
+                    <div class="ticket">
+                        <div class="ticket__info">
+                            <img src="images/icons/ic_gray_logo.png" alt="" />
+                            <div class="flex-direction">
+                                <span>22.09.25</span>
+                                <h6>Premium GA</h6>
+                            </div>
+                        </div>
+                        <div class="ticket__con">
+                            <span class="con__l">STAFF (1일권)</span>
+                            <span class="con__r">STAFF (1일권)</span>
+                        </div>
+                    </div>
+                    <div class="ticket">
+                        <div class="ticket__info">
+                            <img src="images/icons/ic_gray_logo.png" alt="" />
+                            <div class="flex-direction">
+                                <span>22.09.25</span>
+                                <h6>Premium GA</h6>
+                            </div>
+                        </div>
+                        <div class="ticket__con">
+                            <span class="con__l">STAFF (1일권)</span>
+                            <span class="con__r">STAFF (1일권)</span>
+                        </div>
+                    </div>
+                    <div class="ticket">
+                        <div class="ticket__info">
+                            <img src="images/icons/ic_gray_logo.png" alt="" />
+                            <div class="flex-direction">
+                                <span>22.09.25</span>
+                                <h6>Premium GA</h6>
+                            </div>
+                        </div>
+                        <div class="ticket__con">
+                            <span class="con__l">STAFF (1일권)</span>
+                            <span class="con__r">STAFF (1일권)</span>
+                        </div>
+                    </div>
+                    <div class="ticket">
+                        <div class="ticket__info">
+                            <img src="images/icons/ic_gray_logo.png" alt="" />
+                            <div class="flex-direction">
+                                <span>22.09.25</span>
+                                <h6>Premium GA</h6>
+                            </div>
+                        </div>
+                        <div class="ticket__con">
+                            <span class="con__l">STAFF (1일권)</span>
+                            <span class="con__r">STAFF (1일권)</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <script>
+            const ticket = document.querySelectorAll(".ticket");
+            const open = document.querySelector(".ticket:last-child");
+            const length = ticket.length;
+            document.addEventListener("DOMContentLoaded", () => {
+                ticket.forEach((item, i) => {
+                    item.style.top = `${i * 20}px`;
+                    item.style.filter = `brightness(${i / length + 0.15})`;
+                    item.style.opacity = 1;
+                    item.style.transitionDelay = `${i / 10}s`;
+                    item.style.zIndex = i;
+                });
+            });
+        </script>
+    </body>
+</html>
