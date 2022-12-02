@@ -68,6 +68,7 @@ section {
 }
 .ticket__list {
     position: relative;
+    height: 100%;
     margin-top: 5%;
 }
 .ticket__list .ticket {
@@ -84,7 +85,7 @@ section {
     background-size: cover;
     padding-bottom: calc(140 / 310 * 100%);
     opacity: 0;
-    transition: top 0.5s, opacity 0.4s ease-out;
+    transition: top 0.5s, opacity 0.3s, margin-top 0.3s ease-out;
 }
 .ticket__list .ticket:last-child {
     filter: brightness(1) !important;

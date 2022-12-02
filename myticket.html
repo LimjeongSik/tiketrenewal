@@ -126,7 +126,6 @@
 
         <script>
             const ticket = document.querySelectorAll(".ticket");
-            const open = document.querySelector(".ticket:last-child");
             const length = ticket.length;
             document.addEventListener("DOMContentLoaded", () => {
                 ticket.forEach((item, i) => {
@@ -135,6 +134,20 @@
                     item.style.opacity = 1;
                     item.style.transitionDelay = `${i / 10}s`;
                     item.style.zIndex = i;
+                    function transition() {
+                        setTimeout(() => {
+                            item.style.top = `0px`;
+                            setTimeout(() => {
+                                item.style.filter = `brightness(1)`;
+                                item.style.top = `${i * item.offsetHeight}px`;
+                                setTimeout(() => {
+                                    item.style.marginTop = `${i * 12}px`;
+                                }, 200);
+                            }, 1000);
+                        }, 1000);
+                    }
+                    transition();
+                    window.addEventListener("resize", transition);
                 });
             });
         </script>
