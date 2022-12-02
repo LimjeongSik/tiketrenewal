@@ -134,20 +134,16 @@
                     item.style.opacity = 1;
                     item.style.transitionDelay = `${i / 10}s`;
                     item.style.zIndex = i;
-                    function transition() {
+                    setTimeout(() => {
+                        item.style.top = `0px`;
                         setTimeout(() => {
-                            item.style.top = `0px`;
+                            item.style.filter = `brightness(1)`;
+                            item.style.top = `${i * item.offsetHeight}px`;
                             setTimeout(() => {
-                                item.style.filter = `brightness(1)`;
-                                item.style.top = `${i * item.offsetHeight}px`;
-                                setTimeout(() => {
-                                    item.style.marginTop = `${i * 12}px`;
-                                }, 200);
-                            }, 1000);
+                                item.style.marginTop = `${i * 12}px`;
+                            }, 200);
                         }, 1000);
-                    }
-                    transition();
-                    window.addEventListener("resize", transition);
+                    }, 1000);
                 });
             });
         </script>
