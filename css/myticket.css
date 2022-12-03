@@ -1,6 +1,12 @@
 .mobile__wrap {
     background: var(--base-black);
     height: 100%;
+    padding-bottom: 50px;
+}
+.mobile__wrap::after {
+    content: "";
+    display: block;
+    clear: both;
 }
 .header__area {
     display: grid;
@@ -21,7 +27,6 @@
     font-family: "Pretendard";
     text-align: center;
 }
-
 /* tab */
 .tab__category {
     width: 100%;
@@ -52,7 +57,6 @@ section {
     padding: 0 20px;
     margin-top: 22px;
     height: 100%;
-    box-sizing: border-box;
 }
 .section__title h2 {
     font-size: 19px;
@@ -66,17 +70,16 @@ section {
     color: #bbb;
     font-family: "Of-R";
 }
+
 .ticket__list {
     position: relative;
-    height: 100%;
     margin-top: 5%;
 }
 .ticket__list .ticket {
     position: absolute;
     left: 0;
-    top: 0;
     right: 0;
-    bottom: 0;
+    top: 0;
     max-width: 100%;
     height: 0;
     background-image: url(../images/bg/bg_ticket.png);
@@ -84,12 +87,14 @@ section {
     background-repeat: no-repeat;
     background-size: cover;
     padding-bottom: calc(140 / 310 * 100%);
+    transform: translateX(100%);
     opacity: 0;
-    transition: top 0.5s, opacity 0.3s, margin-top 0.3s ease-out;
-}
-.ticket__list .ticket:last-child {
-    filter: brightness(1) !important;
-    -webkit-filter: brightness(1) !important;
+    visibility: hidden;
+    filter: drop-shadow(1px 3px 10px rgba(0, 0, 0, 0.5));
+    -webkit-filter: drop-shadow(1px 3px 10px rgba(0, 0, 0, 0.5));
+    transition: top 0.5s, opacity 0.3s, transform 0.3s, filter 0.3s ease-out;
+    -webkit-transition: top 0.5s, opacity 0.3s, transform 0.3s,
+        filter 0.3s ease-out;
 }
 .ticket__info {
     position: absolute;
@@ -144,4 +149,30 @@ section {
 }
 .ticket__con span.con__r {
     color: rgba(0, 0, 0, 0.3);
+}
+
+/* btns */
+.fot__btns {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
+.fot__btns > div {
+    flex: 1;
+    height: 54px;
+    justify-content: center;
+    cursor: pointer;
+}
+.fot__btns > div span {
+    font-size: 15px;
+    color: var(--base-white);
+    font-family: "Pretendard";
+    font-weight: var(--semibold);
+}
+.fot__btns > .btn__convection {
+    background-color: #363636;
+}
+.fot__btns > .btn__entrance {
+    background-color: #32cfab;
 }
