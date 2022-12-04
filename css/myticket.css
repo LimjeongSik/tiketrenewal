@@ -158,10 +158,28 @@ section {
     cursor: pointer;
 }
 .fot__btns > div span {
+    display: inline-flex;
+    align-items: center;
     font-size: 15px;
     color: var(--base-white);
     font-family: "Pretendard";
     font-weight: var(--semibold);
+}
+.fot__btns > div span .count__entrance {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    min-width: 20px;
+    min-height: 20px;
+    padding: 1px;
+    font-size: 13px;
+    color: var(--base-white);
+    font-family: "Pretendard";
+    font-weight: var(--semibold);
+    border-radius: 50%;
+    background: var(--base-black);
+    box-sizing: border-box;
+    margin-right: 4px;
 }
 .fot__btns > .btn__convection {
     background-color: #363636;
