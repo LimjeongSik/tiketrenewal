@@ -1,6 +1,5 @@
 .mobile__wrap {
     background: var(--base-black);
-    height: 100%;
     padding-bottom: 50px;
 }
 .mobile__wrap::after {
@@ -56,7 +55,6 @@
 section {
     padding: 0 20px;
     margin-top: 22px;
-    height: 100%;
 }
 .section__title h2 {
     font-size: 19px;
@@ -72,14 +70,11 @@ section {
 }
 
 .ticket__list {
-    position: relative;
     margin-top: 5%;
+    padding-bottom: 74px;
 }
 .ticket__list .ticket {
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 0;
+    position: relative;
     max-width: 100%;
     height: 0;
     background-image: url(../images/bg/bg_ticket.png);
@@ -87,14 +82,14 @@ section {
     background-repeat: no-repeat;
     background-size: cover;
     padding-bottom: calc(140 / 310 * 100%);
-    transform: translateX(100%);
     opacity: 0;
-    visibility: hidden;
-    filter: drop-shadow(1px 3px 10px rgba(0, 0, 0, 0.5));
-    -webkit-filter: drop-shadow(1px 3px 10px rgba(0, 0, 0, 0.5));
-    transition: top 0.5s, opacity 0.3s, transform 0.3s, filter 0.3s ease-out;
-    -webkit-transition: top 0.5s, opacity 0.3s, transform 0.3s,
-        filter 0.3s ease-out;
+    transition: opacity 0.4s ease-out;
+}
+.ticket__list .ticket.on {
+    opacity: 1;
+}
+.ticket__list .ticket:not(:first-child) {
+    margin-top: 16px;
 }
 .ticket__info {
     position: absolute;

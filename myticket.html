@@ -131,31 +131,47 @@
         </div>
 
         <script>
+            // const ticketWrap = document.querySelector(".ticket__list");
+            // const ticket = document.querySelectorAll(".ticket");
+            // const view = [...ticket].slice(0, 4);
+            // function trans() {
+            //     ticket.forEach((item, i) => {
+            //         view.forEach((item, i) => {
+            //             item.style.opacity = "1";
+            //             item.style.visibility = "visible";
+            //         });
+            //         item.style.transform = `translateX(0)`;
+            //         item.style.transitionDelay = `${i * 0.1}s`;
+            //         item.style.marginTop = `${i * 16}px`;
+            //         setTimeout(() => {
+            //             item.style.top = `${i * item.offsetHeight}px`;
+            //             setTimeout(() => {
+            //                 item.style.opacity = "1";
+            //                 item.style.visibility = "visible";
+            //             }, 200);
+            //         }, 550);
+            //     });
+            // }
+            // console.log(ticket[1].getAttribute("style"));
+
+            // document.addEventListener("DOMContentLoaded", trans);
+            // window.addEventListener("resize", trans);
+        </script>
+        <script>
             const ticketWrap = document.querySelector(".ticket__list");
             const ticket = document.querySelectorAll(".ticket");
-            const view = [...ticket].slice(0, 4);
-            function trans() {
-                ticket.forEach((item, i) => {
-                    view.forEach((item, i) => {
-                        item.style.opacity = "1";
-                        item.style.visibility = "visible";
-                    });
-                    item.style.transform = `translateX(0)`;
-                    item.style.transitionDelay = `${i * 0.1}s`;
-                    item.style.marginTop = `${i * 16}px`;
-                    setTimeout(() => {
-                        item.style.top = `${i * item.offsetHeight}px`;
-                        setTimeout(() => {
-                            item.style.opacity = "1";
-                            item.style.visibility = "visible";
-                        }, 200);
-                    }, 550);
+
+            function ticketTrnasition() {
+                let scroll =
+                    (window.scrollY || window.pageYOffset || window.scrollTop) +
+                    window.innerHeight / 1.3;
+                ticket.forEach((item) => {
+                    if (scroll > item.offsetTop && scroll >= 0) {
+                        item.classList.add("on");
+                    }
                 });
             }
-            console.log(ticket[1].getAttribute("style"));
-
-            document.addEventListener("DOMContentLoaded", trans);
-            window.addEventListener("resize", trans);
+            window.addEventListener("scroll", ticketTrnasition);
         </script>
     </body>
 </html>
