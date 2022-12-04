@@ -83,10 +83,8 @@ section {
     background-size: cover;
     padding-bottom: calc(140 / 310 * 100%);
     opacity: 0;
-    transition: opacity 0.4s ease-out;
-}
-.ticket__list .ticket.on {
-    opacity: 1;
+    transform: translateY(100px);
+    transition: opacity 0.5s ease-out;
 }
 .ticket__list .ticket:not(:first-child) {
     margin-top: 16px;
